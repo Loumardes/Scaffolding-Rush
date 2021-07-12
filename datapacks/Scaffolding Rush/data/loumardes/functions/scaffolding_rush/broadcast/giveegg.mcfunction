@@ -1,0 +1,1 @@
+tellraw @s ["",{"text":"[SR]","color":"gold"},{"text":" Tu viens de recevoire l'emplacement de ta base, récupère le avec un ","color":"gray"},{"keybind":"key.use","color":"gray"},{"text":" !","color":"gray"}]
