@@ -47,9 +47,6 @@ execute as @e[type=minecraft:falling_block,nbt={BlockState:{Name:"minecraft:lime
 execute as @e[type=minecraft:falling_block,nbt={BlockState:{Name:"minecraft:red_concrete_powder"}}] at @s if block ~ ~-0.75 ~ #loumardes:tower run kill @s
 execute as @e[type=minecraft:falling_block,nbt={BlockState:{Name:"minecraft:yellow_concrete_powder"}}] at @s if block ~ ~-0.75 ~ #loumardes:tower run kill @s
 
-#suffocation
-execute as @a[gamemode=!spectator] at @s if score GameRunning global matches 0 if block ~ ~ ~ #loumardes:lobby run tp @s ~ ~0.5 ~
-
 #instant pillar
 execute if score InstantPillar options matches 1 at @e[type=falling_block,nbt={BlockState:{Name:"minecraft:scaffolding"}}] run summon minecraft:area_effect_cloud ~ ~ ~ {Duration:2147483647, CustomName:'{"text":"ScR_Pillar"}'}
 execute if score InstantPillar options matches 1 as @e[type=area_effect_cloud ,name="ScR_Pillar"] at @s run function loumardes:scaffolding_rush/pillar/start

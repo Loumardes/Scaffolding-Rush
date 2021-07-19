@@ -33,7 +33,9 @@ scoreboard objectives add opt_team_number trigger
 #internal values
 scoreboard objectives add global dummy
 scoreboard objectives add options dummy
+scoreboard objectives add XEntity dummy
 scoreboard objectives add YEntity dummy
+scoreboard objectives add ZEntity dummy
 scoreboard objectives add usedSnowball minecraft.used:minecraft.snowball
 scoreboard objectives add gameId dummy
 
@@ -45,6 +47,8 @@ scoreboard objectives add yellowPlaced minecraft.used:blaze_spawn_egg
 
 scoreboard players set #20 global 20
 scoreboard players set #10 global 10
+scoreboard players set #2 global 2
+scoreboard players set #0 global 0
 
 execute unless score GameId global matches 0.. run scoreboard players set GameId global 0
 
