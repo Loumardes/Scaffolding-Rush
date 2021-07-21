@@ -14,3 +14,7 @@ scoreboard players enable @a opt_fall_damage
 scoreboard players enable @a opt_random_team
 scoreboard players enable @a opt_team_number
 scoreboard players enable @a opt_resp_delay
+
+scoreboard players enable @a opt_island
+scoreboard players enable @a opt_island_first
+scoreboard players enable @a opt_island_spawn

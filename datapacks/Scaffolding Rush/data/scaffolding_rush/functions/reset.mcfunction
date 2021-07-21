@@ -59,3 +59,5 @@ tag @a remove TeamEliminated
 
 #Bossbar
 bossbar set minecraft:filling_lava visible false
+
+schedule clear scaffolding_rush:game/islandwait

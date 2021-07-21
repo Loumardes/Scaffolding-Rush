@@ -22,4 +22,7 @@ team modify green seeFriendlyInvisibles true
 team modify red seeFriendlyInvisibles true
 team modify yellow seeFriendlyInvisibles true
 
+execute if score SpawnIsland option matches 1 run scoreboard players operation islandWait global = IslandFirstSpwan options
+execute if score SpawnIsland option matches 1 run function scaffolding_rush:game/islandwait
+
 execute if score DevelopementMode global matches 1 run tellraw @a ["",{"text":"[SC]","color":"gold"},{"text":" Developement mode is "},{"text":"enable","bold":true,"color":"dark_green"},{"text":" make "},{"text":"/trigger Reset","clickEvent":{"action":"suggest_command","value":"/trigger Reset"}},{"text":" for stop the game"}]
