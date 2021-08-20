@@ -2,10 +2,15 @@
 #Rise Lava
 execute unless score LavaSpeedTics options matches 0 run scoreboard players add LavaCountdown global 1
 execute if score LavaCountdown global >= LavaSpeedTics options run scoreboard players add LavaLevel global 1
+execute if score LavaCountdown global >= LavaSpeedTics options run scoreboard players add LavaEffect global 1
 execute if score PerformanceMode options matches 0 if score LavaCountdown global >= LavaSpeedTics options as @e[type=marker,name="ScR_LavaLevel"] at @s run function scaffolding_rush:lava/rise_globally
 execute if score LavaCountdown global >= LavaSpeedTics options as @e[type=marker,name="ScR_Build"] at @s run function scaffolding_rush:game/air_replace
 execute if score LavaCountdown global >= LavaSpeedTics options run scoreboard players set LavaCountdown global 0
 
+# check if player is under lava effect level
+execute as @a[gamemode=!spectator, nbt=!{ActiveEffects:[{Id:2b}]}] if score LavaLevel global matches 4.. if score @s YEntity <= LavaEffect global run tellraw @s  ["",{"text":"[SR]","color":"gold"},{"text":" Watch out, ","color":"dark_red"},{"text":"the floor is really hot,","underlined":true,"color":"dark_red"},{"text":" you can feel it from here ! ","color":"dark_red"}]
+execute as @a[gamemode=!spectator] if score LavaLevel global matches 4.. if score @s YEntity <= LavaEffect global run effect give @s slowness 2 1 true
+execute at @a[gamemode=!spectator, nbt={ActiveEffects:[{Id:2b}]}] run particle falling_water ~ ~ ~ 0.1 0.1 0.1 1 5 normal
 
 execute as @a[gamemode=!spectator] at @s run function scaffolding_rush:lava/simulate
 execute as @e[type=villager,tag=!LobbyBase] at @s run function scaffolding_rush:lava/simulate
@@ -40,3 +45,6 @@ execute as @a[team=blue,gamemode=spectator,tag=!TeamEliminated,limit=1] unless e
 execute as @a[team=red,gamemode=spectator,tag=!TeamEliminated,limit=1] unless entity @a[team=red,gamemode=!spectator] run function scaffolding_rush:game/elimination/red
 execute as @a[team=green,gamemode=spectator,tag=!TeamEliminated,limit=1] unless entity @a[team=green,gamemode=!spectator] run function scaffolding_rush:game/elimination/green
 execute as @a[team=yellow,gamemode=spectator,tag=!TeamEliminated,limit=1] unless entity @a[team=yellow,gamemode=!spectator] run function scaffolding_rush:game/elimination/yellow
+
+# check if the player is close to the lava [proximity-rush nerf]
+execute as @a if score LavaLevel global matches 7.. if score @s YEntity 

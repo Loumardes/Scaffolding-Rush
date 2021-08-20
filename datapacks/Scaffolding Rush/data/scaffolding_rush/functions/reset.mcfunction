@@ -19,6 +19,7 @@ schedule clear scaffolding_rush:game/start
 schedule clear scaffolding_rush:lava/sound
 
 scoreboard players set LavaLevel global 2
+scoreboard players set LavaOffset global 0
 scoreboard players set GameLobby global 1
 scoreboard players set GameEnd global 0
 scoreboard players set GameRunning global 0

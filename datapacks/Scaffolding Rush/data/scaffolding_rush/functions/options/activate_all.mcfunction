@@ -18,3 +18,4 @@ scoreboard players enable @s opt_admin
 scoreboard players enable @s opt_villager
 scoreboard players enable @s Reset
 scoreboard players enable @s StartGame
+scoreboard players enable @s opt_lavaproxnerf
